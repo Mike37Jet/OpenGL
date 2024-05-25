@@ -6,15 +6,19 @@
 #include <vector>
 #include <chrono>
 #include <thread>
+#include <random>
 const float MY_PI = 3.14159265358979323846f;
+
+ 
 
 // Declaracion de funciones callback y funciones de entrada
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-std::vector<float> generarVerticesPoligono(int numVertices, float radius);
+int main();
+std::vector<float> generarVerticesPoligono(int numVertices, float radius, float centerX, float centerY);
 void processInput(GLFWwindow* window);
 // Definir la resolucion de la ventana
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+const unsigned int SCR_WIDTH = 1200;
+const unsigned int SCR_HEIGHT = 700;
 // Definir los shaders
 const char* vertexShaderSource = "#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n"
@@ -29,8 +33,17 @@ const char* fragmentShaderSource = "#version 330 core\n"
 "   FragColor = vec4(1.0f, 0.7f, 0.2f, 1.0f);\n"
 "}\n\0";
 
+float generateRandomNumber() {
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    std::uniform_real_distribution<> dis(-1.0, 1.0);
+    return dis(gen);
+}
+
 int main()
 {
+    float centerX = 0.0f;
+    float centerY = 0.0f;
 // Se inicializa GLFW y se configura la version de OpenGL
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -94,10 +107,10 @@ int main()
     glDeleteShader(fragmentShader);
 
     // Se definen los vertices del triangulo
-    int numVertices = 10;
+    int numVertices = 6;
     ; // Cambia este valor para probar con diferentes números de vértices
-    float radius = 0.6f; // Radio del polígono
-    std::vector<float> vertices = generarVerticesPoligono(numVertices, radius);
+    float radius = 0.1f; // Radio del polígono
+    std::vector<float> vertices = generarVerticesPoligono(numVertices, radius, centerX, centerY);
     // Se crean los buffers y se enlazan con los vertices
     unsigned int VBO, VAO; //El VBO es el buffer de vertices en GPU, y el VAO es el array de vertices con las configuraciones de los atributos
     glGenVertexArrays(1, &VAO);
@@ -118,19 +131,30 @@ int main()
     // Se ejecuta el bucle principal
     while (!glfwWindowShouldClose(window))
     {
-
         processInput(window);
         glClearColor(0.2f, 0.1f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        /*
-        numVertices++;
-        float radius = 0.5f; 
-        std::vector<float> vertices = generarVerticesPoligono(numVertices, radius);
+        if (numVertices <= 56) {
+            numVertices++;
+        }
+        else {
+			numVertices = 6;
+		}
+        if (radius <= 0.5) {
+            radius+= 0.01f;
+        }
+        else {
+           
+            centerX = generateRandomNumber();
+            centerY = generateRandomNumber();
+            radius = 0.0000001f;
+        }
+
+        std::vector<float> vertices = generarVerticesPoligono(numVertices, radius, centerX, centerY);
 
         glBindBuffer(GL_ARRAY_BUFFER, VBO);
-        glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
-        */
+        glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW); 
 
         glUseProgram(shaderProgram);
         glBindVertexArray(VAO);
@@ -138,7 +162,7 @@ int main()
 
         
         // Retraso
-        std::this_thread::sleep_for(std::chrono::milliseconds(200)); // 1000 ms = 1 segundo
+        std::this_thread::sleep_for(std::chrono::milliseconds(1)); // 1000 ms = 1 segundo
        
 
         glfwSwapBuffers(window);
@@ -153,17 +177,22 @@ int main()
     return 0;
 }
 
-std::vector<float> generarVerticesPoligono(int numVertices, float radius) {
+
+
+std::vector<float> generarVerticesPoligono(int numVertices, float radius, float centerX, float centerY) {
     std::vector<float> vertices;
+   
     for (int i = 0; i < numVertices; ++i) {
       
         float angle = 2.0f * MY_PI * i / numVertices;
-        vertices.push_back(radius * cos(angle));
-        vertices.push_back(radius * sin(angle));
+        vertices.push_back(centerX + radius * cos(angle));
+        vertices.push_back(centerY + radius * sin(angle));
         vertices.push_back(0.0f); 
     }
     return vertices;
 }
+
+
 
 // Funciones de entrada de teclado
 void processInput(GLFWwindow* window)

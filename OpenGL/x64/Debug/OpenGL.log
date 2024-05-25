@@ -1,2 +1,3 @@
 ﻿  B1T3_FirstTriangle.cpp
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\B1T3_FirstTriangle.cpp(40,15): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
   OpenGL.vcxproj -> C:\Users\migue\Documents\Visual Studio 2022\OpenGL\x64\Debug\OpenGL.exe

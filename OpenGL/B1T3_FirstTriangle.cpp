@@ -146,6 +146,7 @@ int main()
             radius+= 0.01f;
         }
         else {
+           
             centerX = generateRandomNumber();
             centerY = generateRandomNumber();
             radius = 0.0000001f;

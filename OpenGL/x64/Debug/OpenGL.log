@@ -1,3 +1,4 @@
-﻿  B1T3_FirstTriangle.cpp
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\B1T3_FirstTriangle.cpp(40,15): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+﻿  Tarea_B2T1.cpp
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL_Stuff\include\learnopengl\shader_s.h(43,40): warning C4101: 'e': variable local sin referencia
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T1.cpp(184,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   OpenGL.vcxproj -> C:\Users\migue\Documents\Visual Studio 2022\OpenGL\x64\Debug\OpenGL.exe

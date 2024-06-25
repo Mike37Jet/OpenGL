@@ -13,13 +13,35 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de origen\Shaders">
+      <UniqueIdentifier>{d3681f1f-d96a-49a5-a9da-89d170834e2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Texturas">
+      <UniqueIdentifier>{ab34029a-e95e-4b17-a322-38f2222fb38b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\OpenGL_Stuff\Library\glad.c">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="C2_Exercise_6_ShaderVertexAttri.cpp">
+    <ClCompile Include="Tarea_B2T1.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\fragmentshader_B2T1.fs">
+      <Filter>Archivos de origen\Shaders</Filter>
+    </None>
+    <None Include="shaders\vertexshader_B2T1.vs">
+      <Filter>Archivos de origen\Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\texture1.jpg">
+      <Filter>Archivos de origen\Texturas</Filter>
+    </Image>
+    <Image Include="textures\texture2.jpg">
+      <Filter>Archivos de origen\Texturas</Filter>
+    </Image>
   </ItemGroup>
 </Project>

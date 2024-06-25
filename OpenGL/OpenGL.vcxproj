@@ -133,7 +133,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\OpenGL_Stuff\Library\glad.c" />
-    <ClCompile Include="C2_Exercise_6_ShaderVertexAttri.cpp" />
+    <ClCompile Include="Tarea_B2T1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\fragmentshader_B2T1.fs" />
+    <None Include="shaders\vertexshader_B2T1.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\texture2.jpg" />
+    <Image Include="textures\texture1.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

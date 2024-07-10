@@ -1,4 +1,12 @@
-﻿  Tarea_B2T1.cpp
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL_Stuff\include\learnopengl\shader_s.h(43,40): warning C4101: 'e': variable local sin referencia
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T1.cpp(184,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+﻿  C2_Exercise_12_VP3D_Task4.cpp
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL_Stuff\include\learnopengl\shader.h(55,40): warning C4101: 'e': variable local sin referencia
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\C2_Exercise_12_VP3D_Task4.cpp(210,28): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\C2_Exercise_12_VP3D_Task4.cpp(245,39): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\C2_Exercise_12_VP3D_Task4.cpp(295,17): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\C2_Exercise_12_VP3D_Task4.cpp(296,17): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\C2_Exercise_12_VP3D_Task4.cpp(300,19): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\C2_Exercise_12_VP3D_Task4.cpp(301,19): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\C2_Exercise_12_VP3D_Task4.cpp(303,13): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\C2_Exercise_12_VP3D_Task4.cpp(304,13): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\C2_Exercise_12_VP3D_Task4.cpp(312,31): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
   OpenGL.vcxproj -> C:\Users\migue\Documents\Visual Studio 2022\OpenGL\x64\Debug\OpenGL.exe

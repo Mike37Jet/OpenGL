@@ -46,7 +46,7 @@ int main()
 #endif
 
     // Creación de la ventana GLFW
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Miguel Mendosa - 2300163678", NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -72,66 +72,72 @@ int main()
     glEnable(GL_DEPTH_TEST);
 
     // Compilación y enlace de los shaders
-    Shader ourShader("shaders/shader_exercise12.vs", "shaders/shader_exercise12.fs");
+    Shader ourShader("shaders/vertexshader_B2T3.vs", "shaders/fragmentshader_B2T3.fs");
 
     // Definición de los datos de los vértices y configuración de los atributos del vértice
     float vertices[] = {
         // Posiciones       // Coordenadas de textura
-        -0.5f, -0.5f, -0.5f,  0.551f, 0.508f,
-         0.5f, -0.5f, -0.5f,  0.754f, 0.508f,
-         0.5f,  0.5f, -0.5f,  0.754f, 0.684f, //Cara frontal
-         0.5f,  0.5f, -0.5f,  0.754f, 0.684f,
-        -0.5f,  0.5f, -0.5f,  0.552f, 0.684f,
-        -0.5f, -0.5f, -0.5f,  0.551f, 0.508f,
+                            //Cara frontal
+        -0.5f, -0.5f, -0.5f,  0.551f, 0.508f, 0.559f, 0.481f, 0.551f, 0.500f, //F
+         0.5f, -0.5f, -0.5f,  0.754f, 0.508f, 0.764f, 0.481f, 0.754f, 0.500f, //H
+         0.5f,  0.5f, -0.5f,  0.754f, 0.684f, 0.764f, 0.653f, 0.754f, 0.680f, //G
+         0.5f,  0.5f, -0.5f,  0.754f, 0.684f, 0.764f, 0.653f, 0.754f, 0.680f, //G
+        -0.5f,  0.5f, -0.5f,  0.552f, 0.684f, 0.558f, 0.653f, 0.552f, 0.680f, //E
+        -0.5f, -0.5f, -0.5f,  0.551f, 0.508f, 0.558f, 0.481f, 0.551f, 0.500f, //F
+        
+                            //Cara trasera
+        -0.5f, -0.5f,  0.5f,  0.147f, 0.506f, 0.150f, 0.481f, 0.147f, 0.506f, //A
+         0.5f, -0.5f,  0.5f,  0.350f, 0.506f, 0.335f, 0.481f, 0.350f, 0.506f, //D
+         0.5f,  0.5f,  0.5f,  0.350f, 0.645f, 0.335f, 0.624f, 0.350f, 0.645f, //C
+         0.5f,  0.5f,  0.5f,  0.350f, 0.645f, 0.335f, 0.624f, 0.350f, 0.645f, //C
+        -0.5f,  0.5f,  0.5f,  0.147f, 0.645f, 0.150f, 0.624f, 0.147f, 0.645f, //B
+        -0.5f, -0.5f,  0.5f,  0.147f, 0.504f, 0.150f, 0.481f, 0.147f, 0.504f, //A
 
-        -0.5f, -0.5f,  0.5f,  0.147f, 0.506f,
-         0.5f, -0.5f,  0.5f,  0.350f, 0.506f,
-         0.5f,  0.5f,  0.5f,  0.350f, 0.645f, //Cara trasera
-         0.5f,  0.5f,  0.5f,  0.350f, 0.645f,
-        -0.5f,  0.5f,  0.5f,  0.147f, 0.645f,
-        -0.5f, -0.5f,  0.5f,  0.147f, 0.504f,
+                            //Cara izquierda del personaje
+        -0.5f, -0.5f, -0.5f,  0.754f, 0.508f, 0.764f, 0.481f, 0.754f, 0.500f, //H
+        -0.5f, -0.5f,  0.5f,  0.956f, 0.508f, 0.968f, 0.481f, 0.956f, 0.500f, //J
+        -0.5f,  0.5f,  0.5f,  0.956f, 0.684f, 0.968f, 0.653f, 0.956f, 0.680f, //I
+        -0.5f,  0.5f,  0.5f,  0.956f, 0.684f, 0.968f, 0.653f, 0.956f, 0.680f, //I
+        -0.5f,  0.5f, -0.5f,  0.754f, 0.684f, 0.764f, 0.653f, 0.754f, 0.680f, //G
+        -0.5f, -0.5f, -0.5f,  0.754f, 0.508f, 0.764f, 0.481f, 0.754f, 0.500f, //H
 
-        -0.5f, -0.5f, -0.5f,  0.754f, 0.508f,
-        -0.5f, -0.5f,  0.5f,  0.956f, 0.508f,
-        -0.5f,  0.5f,  0.5f,  0.956f, 0.684f, //Cara izquierda del personaje
-        -0.5f,  0.5f,  0.5f,  0.956f, 0.684f,
-        -0.5f,  0.5f, -0.5f,  0.754f, 0.684f,
-        -0.5f, -0.5f, -0.5f,  0.754f, 0.508f,
+                            //Cara derecha del personaje    
+         0.5f, -0.5f,  0.5f,  0.350f, 0.508f, 0.355f, 0.481f, 0.350f, 0.500f, //D
+         0.5f, -0.5f, -0.5f,  0.552f, 0.508f, 0.559f, 0.481f, 0.552f, 0.500f, //F
+         0.5f,  0.5f, -0.5f,  0.552f, 0.684f, 0.559f, 0.653f, 0.552f, 0.680f, //E
+         0.5f,  0.5f, -0.5f,  0.552f, 0.684f, 0.559f, 0.653f, 0.552f, 0.680f, //E
+         0.5f,  0.5f,  0.5f,  0.350f, 0.684f, 0.355f, 0.653f, 0.350f, 0.680f, //C
+         0.5f, -0.5f,  0.5f,  0.350f, 0.508f, 0.355f, 0.481f, 0.350f, 0.500f, //D
 
-         0.5f, -0.5f,  0.5f,  0.350f, 0.508f,
-         0.5f, -0.5f, -0.5f,  0.552f, 0.508f,
-         0.5f,  0.5f, -0.5f,  0.552f, 0.684f, //Cara derecha del personaje
-         0.5f,  0.5f, -0.5f,  0.552f, 0.684f,
-         0.5f,  0.5f,  0.5f,  0.350f, 0.684f,
-         0.5f, -0.5f,  0.5f,  0.350f, 0.508f,
+                            //Cara inferior
+        -0.5f, -0.5f,  0.5f,  0.551f, 0.301f, 0.559f, 0.266f, 0.551f, 0.241f, //M
+         0.5f, -0.5f,  0.5f,  0.754f, 0.301f, 0.764f, 0.266f, 0.754f, 0.241f, //N
+         0.5f, -0.5f, -0.5f,  0.754f, 0.508f, 0.764f, 0.461f, 0.754f, 0.500f, //H
+         0.5f, -0.5f, -0.5f,  0.754f, 0.508f, 0.764f, 0.461f, 0.754f, 0.500f, //H
+        -0.5f, -0.5f, -0.5f,  0.551f, 0.508f, 0.559f, 0.461f, 0.551f, 0.500f, //F
+        -0.5f, -0.5f,  0.5f,  0.551f, 0.301f, 0.559f, 0.266f, 0.551f, 0.241f, //M
 
-        -0.5f, -0.5f,  0.5f,  0.551f, 0.301f,
-         0.5f, -0.5f,  0.5f,  0.754f, 0.301f,
-         0.5f, -0.5f, -0.5f,  0.754f, 0.508f, //Cara inferior
-         0.5f, -0.5f, -0.5f,  0.754f, 0.508f,
-        -0.5f, -0.5f, -0.5f,  0.551f, 0.508f,
-        -0.5f, -0.5f,  0.5f,  0.551f, 0.301f,
-
-        -0.5f,  0.5f, -0.5f,  0.552f, 0.684f,
-         0.5f,  0.5f, -0.5f,  0.754f, 0.684f,
-         0.5f,  0.5f,  0.5f,  0.754f, 0.847f, //Cara superior
-         0.5f,  0.5f,  0.5f,  0.754f, 0.847f,
-        -0.5f,  0.5f,  0.5f,  0.552f, 0.847f,
-        -0.5f,  0.5f, -0.5f,  0.552f, 0.684f
+                            //Cara superior
+        -0.5f,  0.5f, -0.5f,  0.552f, 0.684f, 0.559f, 0.653f, 0.552f, 0.680f, //E
+         0.5f,  0.5f, -0.5f,  0.754f, 0.684f, 0.764f, 0.653f, 0.754f, 0.680f, //G
+         0.5f,  0.5f,  0.5f,  0.754f, 0.847f, 0.764f, 0.827f, 0.754f, 0.847f, //L
+         0.5f,  0.5f,  0.5f,  0.754f, 0.847f, 0.764f, 0.827f, 0.754f, 0.847f, //L
+        -0.5f,  0.5f,  0.5f,  0.552f, 0.847f, 0.559f, 0.827f, 0.552f, 0.847f, //K
+        -0.5f,  0.5f, -0.5f,  0.552f, 0.684f, 0.559f, 0.653f, 0.552f, 0.680f, //E
     };
 
     // Posiciones de los cubos en el espacio
     glm::vec3 cubePositions[] = {
         glm::vec3(0.0f,  0.0f,  0.0f),
-        glm::vec3(2.0f,  5.0f, -15.0f),
-        glm::vec3(-1.5f, -2.2f, -2.5f),
-        glm::vec3(-3.8f, -2.0f, -12.3f),
-        glm::vec3(2.4f, -0.4f, -3.5f),
-        glm::vec3(-1.7f,  3.0f, -7.5f),
-        glm::vec3(1.3f, -2.0f, -2.5f),
-        glm::vec3(1.5f,  2.0f, -2.5f),
-        glm::vec3(1.5f,   0.2f, -1.5f),
-        glm::vec3(-1.3f,  1.0f, -1.5f)
+        glm::vec3(1.0f,  3.0f, -2.0f),
+        glm::vec3(-1.0f, -2.0f, -2.0f),
+        glm::vec3(-1.5f, -1.0f, -3.0f),
+        glm::vec3(2.5f, -0.5f, -3.0f),
+        glm::vec3(-1.0f,  3.5f, -3.5f),
+        glm::vec3(3.0f, -1.0f, -3.5f),
+        glm::vec3(1.0f,  3.0f, -4.0f),
+        glm::vec3(0.0f,  0.5f, -2.0f),
+        glm::vec3(-1.0f,  2.5f, -2.5f)
     };
 
     unsigned int VBO, VAO;
@@ -143,15 +149,22 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    // Atributo de posición
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    // position attribute
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-    // Atributo de coordenada de textura
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    // texture coord1 attribute
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
+    // texture coord2 attribute
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)(5 * sizeof(float)));
+    glEnableVertexAttribArray(2);
+    // texture coord3 attribute
+    glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)(7 * sizeof(float)));
+    glEnableVertexAttribArray(3);
+
 
     // Carga y creación de texturas
-    unsigned int texture1, texture2;
+    unsigned int texture1, texture2, texture3;
     // Textura 1
     glGenTextures(1, &texture1);
     glBindTexture(GL_TEXTURE_2D, texture1);
@@ -186,7 +199,29 @@ int main()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     // Carga de la imagen, creación de la textura y generación de mipmaps
-    data = stbi_load("textures/awesomeface.png", &width, &height, &nrChannels, 0);
+    data = stbi_load("textures/meliodas.png", &width, &height, &nrChannels, 0);
+    if (data)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else
+    {
+        std::cout << "Failed to load texture" << std::endl;
+    }
+    stbi_image_free(data);
+
+    // Textura 3
+    glGenTextures(1, &texture3);
+    glBindTexture(GL_TEXTURE_2D, texture3);
+    // Configuración de los parámetros de wrapping
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    // Configuración de los parámetros de filtrado
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    // Carga de la imagen, creación de la textura y generación de mipmaps
+    data = stbi_load("textures/spiderman.png", &width, &height, &nrChannels, 0);
     if (data)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
@@ -202,6 +237,7 @@ int main()
     ourShader.use();
     glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0);
     glUniform1i(glGetUniformLocation(ourShader.ID, "texture2"), 1);
+    glUniform1i(glGetUniformLocation(ourShader.ID, "texture3"), 2);
 
     // Bucle de renderizado
     while (!glfwWindowShouldClose(window))
@@ -223,6 +259,8 @@ int main()
         glBindTexture(GL_TEXTURE_2D, texture1);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
+        glActiveTexture(GL_TEXTURE2);
+        glBindTexture(GL_TEXTURE_2D, texture3);
 
         // Activar el shader
         ourShader.use();
@@ -235,19 +273,44 @@ int main()
 
         // Renderizar los cubos
         glBindVertexArray(VAO);
-        for (unsigned int i = 0; i < 10; i++)
+        for (unsigned int i = 0; i < 9; i++)
         {
+  
+            // Use texture1 for the first 3 cubes, texture2 for the rest
+            if (i < 3)
+            {
+                ourShader.setInt("useTexture1", 2);
+            }
+            else if(i < 6) {
+                ourShader.setInt("useTexture1", 1);
+            }
+            else {
+                ourShader.setInt("useTexture1", 0);
+            }
+
             glm::mat4 model = glm::mat4(1.0f);
-            model = glm::translate(model, cubePositions[i]);
+
+            // Movimiento en círculos
+            float radius = 2.0f; // Radio del círculo
+            float angle2 = glfwGetTime() + i; // Ángulo de rotación
+            float x = sin(angle2) * radius;
+            float y = cos(angle2) * radius;
+            model = glm::translate(model, cubePositions[i] + glm::vec3(x, y, 0.0f));
+    
             float angle = 20.0f * i;
             if (i % 3 == 0) // Rotar solo cada tercer cubo
             {
-                angle = glfwGetTime() * 25.0f;
+                angle = glfwGetTime() * 200.0f;
+                float scale = abs(sin(glfwGetTime() + i));
+                model = glm::scale(model, glm::vec3(scale, scale, scale));
             }
             model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+
             ourShader.setMat4("model", model);
 
+
             glDrawArrays(GL_TRIANGLES, 0, 36);
+            
         }
 
         // Intercambiar buffers y sondear eventos de E/S

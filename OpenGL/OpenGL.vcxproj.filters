@@ -24,17 +24,9 @@
     <ClCompile Include="..\OpenGL_Stuff\Library\glad.c">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Tarea_B2T3.cpp">
+    <ClCompile Include="Tarea_B2T4.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="shaders\fragmentshader_B2T3.fs">
-      <Filter>Archivos de origen\Shaders</Filter>
-    </None>
-    <None Include="shaders\vertexshader_B2T3.vs">
-      <Filter>Archivos de origen\Shaders</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="textures\meliodas.png">
@@ -46,5 +38,22 @@
     <Image Include="textures\Texture6.png">
       <Filter>Archivos de origen\Texturas</Filter>
     </Image>
+    <Image Include="textures\cubo.png">
+      <Filter>Archivos de origen\Texturas</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\fragmentshader_B2T4.fs">
+      <Filter>Archivos de origen\Shaders</Filter>
+    </None>
+    <None Include="shaders\fragmentshader_B2T4_lightcube.fs">
+      <Filter>Archivos de origen\Shaders</Filter>
+    </None>
+    <None Include="shaders\vertexshader_B2T4.vs">
+      <Filter>Archivos de origen\Shaders</Filter>
+    </None>
+    <None Include="shaders\vertexshader_B2T4_lightcube.vs">
+      <Filter>Archivos de origen\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

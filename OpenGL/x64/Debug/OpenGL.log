@@ -1,14 +1,14 @@
-﻿  Tarea_B2T3.cpp
+﻿  Tarea_B2T4.cpp
 C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL_Stuff\include\learnopengl\shader.h(55,40): warning C4101: 'e': variable local sin referencia
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T3.cpp(246,28): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T3.cpp(295,26): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T3.cpp(303,39): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T3.cpp(304,29): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T3.cpp(358,17): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T3.cpp(359,17): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T3.cpp(363,19): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T3.cpp(364,19): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T3.cpp(366,13): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T3.cpp(367,13): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T3.cpp(375,31): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T4.cpp(292,22): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T4.cpp(303,20): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T4.cpp(304,20): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T4.cpp(305,20): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T4.cpp(452,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T4.cpp(453,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T4.cpp(457,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T4.cpp(458,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T4.cpp(460,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T4.cpp(461,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\migue\Documents\Visual Studio 2022\OpenGL\OpenGL\Tarea_B2T4.cpp(469,28): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
   OpenGL.vcxproj -> C:\Users\migue\Documents\Visual Studio 2022\OpenGL\x64\Debug\OpenGL.exe
